@@ -507,10 +507,7 @@ float BME280::readTempC( void )
 
 float BME280::readTempF( void )
 {
-	float output = readTempC();
-	output = (output * 9) / 5 + 32;
-
-	return output;
+	return (readTempC()* 1.8 + 32); //Convert C to F
 }
 
 //****************************************************************************//
@@ -545,10 +542,7 @@ double BME280::dewPointC(void)
 
 double BME280::dewPointF(void)
 {
-  double output = dewPointC();
-  output = (output * 9) / 5 + 32;
-
-  return output;
+  return (dewPointC()* 1.8 + 32); //Convert C to F
 }
 
 // delta max = 0.6544 wrt dewPoint()
